@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Scene with Topology Logo</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; position: absolute; top: 0; left: 0; }
+        #vector-field { z-index: 1; }
+        #three-canvas { z-index: 2; }
+        #logo-container {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            pointer-events: none;
+        }
+        #logo-overlay {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.149.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.149.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas id="vector-field"></canvas>
+    <canvas id="three-canvas"></canvas>
+    <div id="logo-container">
+        <img id="logo-overlay" src="topology.png" alt="Topology Logo">
+    </div>
+    <script type="module" src="main.js"></script>
+    <script src="vectorfield.js"></script>
+</body>
+</html>
